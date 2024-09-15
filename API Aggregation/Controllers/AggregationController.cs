@@ -30,7 +30,7 @@ namespace API_Aggregation.Controllers
         /// <summary>
         /// Retrieves news articles based on the provided filters through an API request.
         /// </summary>
-        /// <param name="DefaultTitle">An optional filter for the article title.</param>
+        /// <param name="DefaultTitle">An  optional filter for the article title.</param>
         /// <param name="DefaultSortBy">An optional filter to sort the articles.</param>
         /// <param name="DefaultLanguage">An optional filter for the article language.</param>
         /// <param name="DefaultFromDate">An optional filter for the date from which to retrieve articles.</param>

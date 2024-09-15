@@ -1,4 +1,5 @@
 ﻿using API_Aggregation.Models;
+using NewsAPI.Constants;
 using NewsAPI.Models;
 
 namespace API_Aggregation.Services.IApiServices
@@ -13,7 +14,7 @@ namespace API_Aggregation.Services.IApiServices
         /// </summary>
         /// <param name="filter">The <see cref="NewsFilter"/> object containing the criteria for filtering news articles.</param>
         /// <returns>A <see cref="Task{TResult}"/> representing the asynchronous operation, with a result of type <see cref="ArticlesResult"/> containing the retrieved news articles.</returns>
-        Task<ArticlesResult> GetNewsAsync(NewsFilter filter);
+        Task<ArticlesResult> GetNewsAsync(string? DefaultTitle, SortBys? DefaultSortBy, Languages? DefaultLanguage, DateTime? DefaultFromDate);
     }
 
 }

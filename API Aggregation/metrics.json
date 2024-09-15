@@ -1,23 +1,9 @@
 {
-  "Movies": {
-    "TotalRequests": 1,
-    "AverageResponseTime": 662.1787,
-    "FastRequests": 0,
-    "AverageRequests": 1,
-    "SlowRequests": 0
-  },
-  "Weather": {
-    "TotalRequests": 1,
-    "AverageResponseTime": 312.0201,
-    "FastRequests": 0,
-    "AverageRequests": 1,
-    "SlowRequests": 0
-  },
   "News": {
-    "TotalRequests": 4,
-    "AverageResponseTime": 467.0647,
-    "FastRequests": 2,
+    "TotalRequests": 1,
+    "AverageResponseTime": 1470.8953,
+    "FastRequests": 0,
     "AverageRequests": 1,
-    "SlowRequests": 1
+    "SlowRequests": 0
   }
 }

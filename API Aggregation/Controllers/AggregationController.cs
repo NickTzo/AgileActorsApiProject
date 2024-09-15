@@ -4,6 +4,7 @@ using API_Aggregation.Services.IApiServices;
 using API_Aggregation.Store;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NewsAPI.Constants;
 using NewsAPI.Models;
 using Newtonsoft.Json;
 using System.Diagnostics;
@@ -27,17 +28,20 @@ namespace API_Aggregation.Controllers
         }
 
         /// <summary>
-        /// A task that fetch the data for the user through an API
+        /// Retrieves news articles based on the provided filters through an API request.
         /// </summary>
-        /// <param name="filter">specific filter that the user want to add for the search</param>
-        /// <returns>ArticlesResult</returns>
-        [HttpPost("News")]
-        public async Task<ActionResult<ArticlesResult>> GetNews(NewsFilter filter)
+        /// <param name="DefaultTitle">An optional filter for the article title.</param>
+        /// <param name="DefaultSortBy">An optional filter to sort the articles.</param>
+        /// <param name="DefaultLanguage">An optional filter for the article language.</param>
+        /// <param name="DefaultFromDate">An optional filter for the date from which to retrieve articles.</param>
+        /// <returns>Returns an <see cref="ActionResult{ArticlesResult}"/> with the search results or an error message if the request fails.</returns>
+        [HttpGet("News")]
+        public async Task<ActionResult<ArticlesResult>> GetNews(string? DefaultTitle, SortBys? DefaultSortBy, Languages? DefaultLanguage, DateTime? DefaultFromDate)
         {
             try
             {
                 var stopwatch = Stopwatch.StartNew();   
-                var result = await _newsService.GetNewsAsync(filter);
+                var result = await _newsService.GetNewsAsync( DefaultTitle,   DefaultSortBy,   DefaultLanguage,   DefaultFromDate);
                 MetricsStore.LogRequest("News", stopwatch.Elapsed.TotalMilliseconds);
                 return Ok(result);
             }

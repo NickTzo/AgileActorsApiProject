@@ -25,9 +25,9 @@ namespace API_Aggregation.ApiClient
         /// </remarks>
         public async Task<string> GetWeatherAsync(decimal lon,decimal lat)
         {
-            //For exhibition purpose i use the line 20 but if you want to se results you need to use line 19 and comment out line 20
-            //var response = await _httpClient.GetAsync($"data/2.5/forecast?id=524901&appid={_apiKey}");
-            var response = await _httpClient.GetAsync($"data/3.0/onecall?lat={lat}&lon={lon}&appid={_apiKey}");
+            //For exhibition purpose i use the line 29 but if you want to see results with coordinates you need to use line 30 and comment out line 29
+            var response = await _httpClient.GetAsync($"data/2.5/forecast?id=524901&appid={_apiKey}");
+            //var response = await _httpClient.GetAsync($"data/3.0/onecall?lat={lat}&lon={lon}&appid={_apiKey}");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
